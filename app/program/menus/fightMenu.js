@@ -5,7 +5,7 @@ class FightMenu extends Container {
 
   init() {
 
-    this.enemy = new Villain(ArenaRPG.player.level);
+    this.enemy = new Villain(window.program.player.level);
     this.enemy.init();
 
     this.battleNumber = 1;
@@ -13,18 +13,18 @@ class FightMenu extends Container {
 
     this.x = 50;
     this.y = -875;
-    this.color = Config.menuBackground;
+    this.color = window.program.menuBackground;
     this.width = 400;
     this.height = 400;
     this.borderWidth = 3;
-    this.borderColor = Config.menuBorders;
+    this.borderColor = window.program.menuBorders;
     this.rounding = 10;
     this.visible = true;
     this.dropShadow = true;
     this.showPlayerPanelMouseOver = false;
 
     this.lblHeader = new Label(this);
-    this.lblHeader.textColor = Config.menuText;
+    this.lblHeader.textColor = window.program.menuText;
     this.lblHeader.y = 10;
     this.lblHeader.x = 0;
     this.lblHeader.width = 400;
@@ -33,7 +33,7 @@ class FightMenu extends Container {
     this.lblHeader.textSize = 26;
     this.lblHeader.alignment = 'center';
 
-    this.playerPanel = new FighterPanel(this, ArenaRPG.player);
+    this.playerPanel = new FighterPanel(this, window.program.player);
     this.playerPanel.init();
  
     this.villainPanel = new FighterPanel(this, this.enemy);
@@ -47,20 +47,20 @@ class FightMenu extends Container {
 
 
     this.btnAttack = new Button(this);
-    this.btnAttack.textColor = Config.buttonText;
-    this.btnAttack.color = Config.attackButtonBackground;
+    this.btnAttack.textColor = window.program.buttonText;
+    this.btnAttack.color = window.program.attackButtonBackground;
     this.btnAttack.y = 250;
     this.btnAttack.x = 100;
     this.btnAttack.width = 200;
     this.btnAttack.height = 50;
     this.btnAttack.text = "Attack!";
     this.btnAttack.rounding = 10;
-    this.btnAttack.borderColor = Config.attackButtonBorder;
+    this.btnAttack.borderColor = window.program.attackButtonBorder;
     this.btnAttack.borderWidth = 1;
     this.btnAttack.dropShadow = true;
 
     this.attack = function () {
-      ArenaRPG.player.attack(this.container.enemy);
+      window.program.player.attack(this.container.enemy);
 
       if (this.container.enemy.currentHP > 0) {
         this.container.enemy.attack(ArenaRPG.player);
@@ -77,9 +77,9 @@ class FightMenu extends Container {
         }
       }
 
-      if (ArenaRPG.player.currentHP < 0) {
-        ArenaRPG.player = new Player();
-        ArenaRPG.player.init();
+      if (window.program.player.currentHP < 0) {
+        window.program.player = new Player();
+        window.program.player.init();
 
         this.container.owner.characterBuilder.characterAttributes.updateText();
 
@@ -99,20 +99,20 @@ class FightMenu extends Container {
     this.btnAttack.subscribe(this.attack);
 
     this.btnTakeWeapon = new Button(this);
-    this.btnTakeWeapon.textColor = Config.buttonText;
-    this.btnTakeWeapon.color = Config.buttonBackground;
+    this.btnTakeWeapon.textColor = window.program.buttonText;
+    this.btnTakeWeapon.color = window.program.buttonBackground;
     this.btnTakeWeapon.y = 325;
     this.btnTakeWeapon.x = 225;
     this.btnTakeWeapon.width = 150;
     this.btnTakeWeapon.height = 50;
     this.btnTakeWeapon.text = "Take Weapon";
     this.btnTakeWeapon.rounding = 10;
-    this.btnTakeWeapon.borderColor = Config.buttonBorders;
+    this.btnTakeWeapon.borderColor = window.program.buttonBorders;
     this.btnTakeWeapon.borderWidth = 1;
     this.btnTakeWeapon.dropShadow = true;
 
     this.takeWeapon = function () {
-      ArenaRPG.player.weapon = this.container.enemy.weapon;
+      window.program.player.weapon = this.container.enemy.weapon;
       this.container.btnLeaveWeapon.visible = false;
       this.container.btnTakeWeapon.visible = false;
       this.container.btnAttack.visible = true;
@@ -122,15 +122,15 @@ class FightMenu extends Container {
     this.btnTakeWeapon.subscribe(this.takeWeapon);
 
     this.btnLeaveWeapon = new Button(this);
-    this.btnLeaveWeapon.textColor = Config.buttonText;
-    this.btnLeaveWeapon.color = Config.buttonBackground;
+    this.btnLeaveWeapon.textColor = window.program.buttonText;
+    this.btnLeaveWeapon.color = window.program.buttonBackground;
     this.btnLeaveWeapon.y = 325;
     this.btnLeaveWeapon.x = 25;
     this.btnLeaveWeapon.width = 150;
     this.btnLeaveWeapon.height = 50;
     this.btnLeaveWeapon.text = "Leave Weapon";
     this.btnLeaveWeapon.rounding = 10;
-    this.btnLeaveWeapon.borderColor = Config.buttonBorders;
+    this.btnLeaveWeapon.borderColor = window.program.buttonBorders;
     this.btnLeaveWeapon.borderWidth = 1;
     this.btnLeaveWeapon.dropShadow = true;
 
@@ -172,10 +172,10 @@ class FightMenu extends Container {
   }
 
   updateGameState() {
-    this.enemy = new Villain(ArenaRPG.player.level);
+    this.enemy = new Villain(window.program.player.level);
     this.enemy.init();
     this.villainPanel.target = this.enemy;
-    ArenaRPG.player.currentHP = ArenaRPG.player.HP;
+    window.program.player.currentHP = window.program.player.HP;
 
     this.villainPanel.updateText();
     this.playerPanel.updateText();
@@ -184,7 +184,7 @@ class FightMenu extends Container {
   draw() {
     if (this.visible) {
       super.draw();
-      this.playerPanel.health.current = ArenaRPG.player.currentHP;
+      this.playerPanel.health.current = window.program.player.currentHP;
       this.villainPanel.health.current = this.enemy.currentHP;
     }
   }

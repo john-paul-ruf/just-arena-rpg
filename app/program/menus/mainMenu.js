@@ -5,18 +5,18 @@ class MainMenu extends Container {
 
   init() {
 
-    this.color = Config.menuBackground;
+    this.color = window.program.menuBackground;
     this.x = 50;
     this.y = 50;
     this.width = 400;
     this.height = 400;
     this.borderWidth = 3;
-    this.borderColor = Config.menuBorders;
+    this.borderColor = window.program.menuBorders;
     this.rounding = 10;
     this.dropShadow = true;
 
     this.lblHeader = new Label(this);
-    this.lblHeader.textColor = Config.menuText;
+    this.lblHeader.textColor = window.program.menuText;
     this.lblHeader.y = 20;
     this.lblHeader.x = 0;
     this.lblHeader.width = 400;
@@ -26,20 +26,20 @@ class MainMenu extends Container {
     this.lblHeader.alignment = 'center';
 
     this.btnCreateCharacter = new Button(this);
-    this.btnCreateCharacter.textColor = Config.buttonText;
-    this.btnCreateCharacter.color = Config.buttonBackground;
+    this.btnCreateCharacter.textColor = window.program.buttonText;
+    this.btnCreateCharacter.color = window.program.buttonBackground;
     this.btnCreateCharacter.y = 100;
     this.btnCreateCharacter.x = 100;
     this.btnCreateCharacter.width = 200;
     this.btnCreateCharacter.height = 50;
     this.btnCreateCharacter.text = "Create Character";
     this.btnCreateCharacter.rounding = 10;
-    this.btnCreateCharacter.borderColor = Config.buttonBorders;
+    this.btnCreateCharacter.borderColor = window.program.buttonBorders;
     this.btnCreateCharacter.borderWidth = 1;
     this.btnCreateCharacter.dropShadow = true;
 
     this.lblAbout = new Label(this);
-    this.lblAbout.textColor = Config.menuText;
+    this.lblAbout.textColor = window.program.menuText;
     this.lblAbout.y = 80; //text is positioned strangely
     this.lblAbout.x = 0;
     this.lblAbout.width = 400;

@@ -5,8 +5,8 @@ class MiniAttributes extends Container {
   }
 
   init() {
-    this.color = Config.menuBackground;
-    this.textColor = Config.menuText;
+    this.color = window.program.menuBackground;
+    this.textColor = window.program.menuText;
     this.y = 10;
     this.x = 10;
     this.width = 100;
@@ -16,7 +16,7 @@ class MiniAttributes extends Container {
     this.dropShadow = false;
 
     this.lblStr = new Label(this);
-    this.lblStr.textColor = Config.menuText;
+    this.lblStr.textColor = window.program.menuText;
     this.lblStr.y = 5;
     this.lblStr.x = 5;
     this.lblStr.width = 100;
@@ -26,7 +26,7 @@ class MiniAttributes extends Container {
     this.lblStr.alignment = 'center';
 
     this.lblDex = new Label(this);
-    this.lblDex.textColor = Config.menuText;
+    this.lblDex.textColor = window.program.menuText;
     this.lblDex.y = 25;
     this.lblDex.x = 5;
     this.lblDex.width = 100;
@@ -36,7 +36,7 @@ class MiniAttributes extends Container {
     this.lblDex.alignment = 'center';
 
     this.lblInt = new Label(this);
-    this.lblInt.textColor = Config.menuText;
+    this.lblInt.textColor = window.program.menuText;
     this.lblInt.y = 50;
     this.lblInt.x = 5;
     this.lblInt.width = 100;
@@ -46,7 +46,7 @@ class MiniAttributes extends Container {
     this.lblInt.alignment = 'center';
 
     this.lblHealth = new Label(this);
-    this.lblHealth.textColor = Config.menuText;
+    this.lblHealth.textColor = window.program.menuText;
     this.lblHealth.y = 75;
     this.lblHealth.x = 5;
     this.lblHealth.width = 100;

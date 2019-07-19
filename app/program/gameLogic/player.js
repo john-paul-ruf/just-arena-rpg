@@ -1,12 +1,13 @@
 class Player extends NPC {
   constructor() {
     super();
-    this.availablePoints = ArenaRPG.initalPoints;
-    this.fightsSurvived = 0;
-    this.level = Math.floor(this.fightsSurvived / 3);
   }
 
   init() {
+    this.availablePoints = window.program.initalPoints;
+    this.fightsSurvived = 0;
+    this.level = Math.ceil(this.fightsSurvived / 3);
+
     this.weapon = LootGenerator.generateWeapon();
   }
 

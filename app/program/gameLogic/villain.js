@@ -1,7 +1,7 @@
 class Villain extends Player {
   constructor(level) {
     super();
-    this.availablePoints = 5 + level;
+    this.availablePoints = window.program.initalPoints + level;
   }
 
   init() {

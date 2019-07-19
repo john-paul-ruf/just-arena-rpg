@@ -6,7 +6,7 @@ class FighterPanel extends Container {
 
   init() {
 
-    this.color = Config.menuBackground;
+    this.color = window.program.menuBackground;
     this.width = 125;
     this.height = 180;
     this.borderWidth = 0;
@@ -19,8 +19,8 @@ class FighterPanel extends Container {
     this.attributes.visible = false;
 
     this.portrait = new Button(this);
-    this.portrait.textColor = Config.menuText;
-    this.portrait.color = Config.menuBackground;
+    this.portrait.textColor = window.program.menuText;
+    this.portrait.color = window.program.menuBackground;
     this.portrait.y = 10;
     this.portrait.x = 10;
     this.portrait.width = 100;
@@ -52,7 +52,7 @@ class FighterPanel extends Container {
     this.health.dropShadow = false;
 
     this.weapon = new Label(this);
-    this.weapon.textColor = Config.menuText;
+    this.weapon.textColor = window.program.menuText;
     this.weapon.y = 140;
     this.weapon.x = 10;
     this.weapon.width = 125;

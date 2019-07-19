@@ -21,25 +21,29 @@ class ArenaRPG {
   }
 
   init() {
+    window.program = this;
 
-    Config.menuText = color(0, 0, 0);
-    Config.menuBorders = color(0, 256, 0);
-    Config.menuBackground = color(128, 128, 128);
+    this.menuText = color(0, 0, 0);
+    this.menuBorders = color(0, 256, 0);
+    this.menuBackground = color(128, 128, 128);
 
-    Config.buttonBorders = color(0, 256, 0);
-    Config.buttonBackground = color(128, 128, 128);
-    Config.buttonText = color(0, 0, 0);
+    this.buttonBorders = color(0, 256, 0);
+    this.buttonBackground = color(128, 128, 128);
+    this.buttonText = color(0, 0, 0);
 
-    Config.attackButtonBorder = color(256, 0, 0);
-    Config.attackButtonBackground = color(128, 128, 128);
+    this.attackButtonBorder = color(256, 0, 0);
+    this.attackButtonBackground = color(128, 128, 128);
 
-    Config.attributePlusButtonBorder = color(256, 0, 0);
-    Config.attributePlusButtonBackground = color(128, 128, 128);
+    this.attributePlusButtonBorder = color(256, 0, 0);
+    this.attributePlusButtonBackground = color(128, 128, 128);
 
-    Config.attributeMinusButtonBorder = color(0, 0, 256);
-    Config.attributeMinusButtonBackground = color(128, 128, 128);
+    this.attributeMinusButtonBorder = color(0, 0, 256);
+    this.attributeMinusButtonBackground = color(128, 128, 128);
 
+    this.initalPoints = 10;
 
+    this.player = new Player();
+    this.player.init();
 
     this.mainMenu = new MainMenu(this);
     this.mainMenu.init();
@@ -59,11 +63,5 @@ class ArenaRPG {
     center(this.mainMenu);
     center(this.characterBuilder);
     center(this.fightMenu);
-
   }
 }
-
-ArenaRPG.initalPoints = 10;
-
-ArenaRPG.player = new Player();
-ArenaRPG.player.init();
