@@ -1,6 +1,7 @@
 class MiniAttributes extends Container {
-  constructor(owner) {
+  constructor(owner, target) {
     super(owner);
+    this.target = target;
   }
 
   init() {
@@ -20,7 +21,7 @@ class MiniAttributes extends Container {
     this.lblStr.x = 5;
     this.lblStr.width = 100;
     this.lblStr.height = 15;
-    this.lblStr.text = `STR: ${ArenaRPG.player.STR}`;
+    this.lblStr.text = `STR: ${this.target.STR}`;
     this.lblStr.textSize = 14;
     this.lblStr.alignment = 'center';
 
@@ -30,7 +31,7 @@ class MiniAttributes extends Container {
     this.lblDex.x = 5;
     this.lblDex.width = 100;
     this.lblDex.height = 15;
-    this.lblDex.text = `DEX: ${ArenaRPG.player.DEX}`;
+    this.lblDex.text = `DEX: ${this.target.DEX}`;
     this.lblDex.textSize = 14;
     this.lblDex.alignment = 'center';
 
@@ -40,7 +41,7 @@ class MiniAttributes extends Container {
     this.lblInt.x = 5;
     this.lblInt.width = 100;
     this.lblInt.height = 15;
-    this.lblInt.text = `INT: ${ArenaRPG.player.INT}`;
+    this.lblInt.text = `INT: ${this.target.INT}`;
     this.lblInt.textSize = 14;
     this.lblInt.alignment = 'center';
 
@@ -50,7 +51,7 @@ class MiniAttributes extends Container {
     this.lblHealth.x = 5;
     this.lblHealth.width = 100;
     this.lblHealth.height = 15;
-    this.lblHealth.text = `HP: ${ArenaRPG.player.HP}`;
+    this.lblHealth.text = `HP: ${this.target.HP}`;
     this.lblHealth.textSize = 14;
     this.lblHealth.alignment = 'center';
 
@@ -63,10 +64,10 @@ class MiniAttributes extends Container {
   }
 
   updateText() {
-    this.lblStr.text = `STR: ${ArenaRPG.player.STR}`;
-    this.lblDex.text = `DEX: ${ArenaRPG.player.DEX}`;
-    this.lblInt.text = `INT: ${ArenaRPG.player.INT}`;
-    this.lblHealth.text = `HP: ${ArenaRPG.player.HP}`;
+    this.lblStr.text = `STR: ${this.target.STR}`;
+    this.lblDex.text = `DEX: ${this.target.DEX}`;
+    this.lblInt.text = `INT: ${this.target.INT}`;
+    this.lblHealth.text = `HP: ${this.target.HP}`;
   }
 
   draw() {

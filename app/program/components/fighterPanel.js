@@ -31,8 +31,12 @@ class FighterPanel extends Container {
     this.portrait.borderWidth = 1;
     this.portrait.dropShadow = false;
 
-    this.portrait.subscribeMouseOver(() => {
-      //this.attributes.visible = true;
+    this.portrait.subscribeMouseEnter(() => {
+      this.attributes.visible = true;
+    });
+
+    this.portrait.subscribeMouseLeave(() => {
+      this.attributes.visible = false;
     });
 
     this.health = new ProgressBar(this, this.target.HP);

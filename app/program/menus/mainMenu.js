@@ -38,8 +38,22 @@ class MainMenu extends Container {
     this.btnCreateCharacter.borderWidth = 1;
     this.btnCreateCharacter.dropShadow = true;
 
+    this.lblAbout = new Label(this);
+    this.lblAbout.textColor = Config.menuText;
+    this.lblAbout.y = 80; //text is positioned strangely
+    this.lblAbout.x = 0;
+    this.lblAbout.width = 400;
+    this.lblAbout.height = 260;
+    this.lblAbout.text = "Enter the Arena \n\n" +
+      "Win the battle \n\n" +
+      "Take the weapon or leave it \n\n" +
+      "Battle on";
+    this.lblAbout.textSize = 16;
+    this.lblAbout.alignment = 'center';
+
     this.drawables.push(this.lblHeader);
     this.drawables.push(this.btnCreateCharacter);
+    this.drawables.push(this.lblAbout);
 
     this.clickables.push(this.btnCreateCharacter);
 

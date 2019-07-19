@@ -22,7 +22,7 @@ class CharacterAttributes extends Container {
     this.lblPoints.height = 50;
     this.lblPoints.text = `Distribute ${ArenaRPG.player.availablePoints} points`;
     this.lblPoints.alignment = 'center';
-    this.lblPoints.textSize = 21;
+    this.lblPoints.textSize = 18;
 
     this.lblStr = new Label(this);
     this.lblStr.textColor = Config.menuText;
@@ -31,7 +31,7 @@ class CharacterAttributes extends Container {
     this.lblStr.width = 100;
     this.lblStr.height = 30;
     this.lblStr.text = `STR: ${ArenaRPG.player.STR}`;
-    this.lblStr.textSize = 21;
+    this.lblStr.textSize = 16;
     this.lblStr.alignment = 'right';
 
     this.plusClick = function () {
@@ -79,7 +79,7 @@ class CharacterAttributes extends Container {
     this.lblDex.width = 100;
     this.lblDex.height = 30;
     this.lblDex.text = `DEX: ${ArenaRPG.player.DEX}`;
-    this.lblDex.textSize = 21;
+    this.lblDex.textSize = 16;
     this.lblDex.alignment = 'right';
 
     this.btnDexPlus = new Button(this);
@@ -117,7 +117,7 @@ class CharacterAttributes extends Container {
     this.lblInt.width = 100;
     this.lblInt.height = 30;
     this.lblInt.text = `INT: ${ArenaRPG.player.INT}`;
-    this.lblInt.textSize = 21;
+    this.lblInt.textSize = 16;
     this.lblInt.alignment = 'right';
 
     this.btnIntPlus = new Button(this);
@@ -155,7 +155,7 @@ class CharacterAttributes extends Container {
     this.lblHealth.width = 100;
     this.lblHealth.height = 30;
     this.lblHealth.text = `HP: ${ArenaRPG.player.HP}`;
-    this.lblHealth.textSize = 21;
+    this.lblHealth.textSize = 16;
     this.lblHealth.alignment = 'right';
 
     this.btnHealthPlus = new Button(this);

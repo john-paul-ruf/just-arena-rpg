@@ -1,6 +1,7 @@
 class Drawable {
   constructor() {
-    this.mouseOverhandlers = [];
+    this.mouseEnterHandlers = [];
+    this.mouseLeaveHandlers = [];
     this.x = 0;
     this.y = 0;
     this.height = 100;
@@ -32,7 +33,8 @@ class Drawable {
       rect(this.relativeX, this.relativeY, this.width, this.height, this.rounding);
       strokeWeight(0);
 
-      this.onMouseOver();
+      this.onMouseEnter();
+      this.onMouseLeave();
     }
   }
 
@@ -44,34 +46,64 @@ class Drawable {
     return this.container ? this.container.relativeY + this.y : this.y;
   }
 
-  mouseOver() {
+  mouseEnter() {
     if (mouseX > this.relativeX && mouseX < this.relativeX + this.width
       && mouseY > this.relativeY && mouseY < this.relativeY + this.height) {
       return true;
     }
     return false;
-  };
+  }
 
-  subscribeMouseOver(fn) {
-    this.mouseOverhandlers.push(fn);
-  };
+  subscribeMouseEnter(fn) {
+    this.mouseEnterHandlers.push(fn);
+  }
 
-  unsubscribeMouseOver(fn) {
-    this.mouseOverhandlers = this.handlers.filter(
+  unsubscribeMouseEnter(fn) {
+    this.mouseEnterHandlers = this.handlers.filter(
       function (item) {
         if (item !== fn) {
           return item;
         }
       }
     );
-  };
+  }
 
-  onMouseOver() {
+  onMouseEnter() {
 
-    this.mouseOverhandlers.forEach((item) => {
-      if (this.mouseOver()) {
+    this.mouseEnterHandlers.forEach((item) => {
+      if (this.mouseEnter()) {
         item.call(this);
       }
     });
-  };
+  }
+
+  mouseLeave() {
+    if (mouseX > this.relativeX && mouseX < this.relativeX + this.width
+      && mouseY > this.relativeY && mouseY < this.relativeY + this.height) {
+      return false;
+    }
+    return true;
+  }
+
+  subscribeMouseLeave(fn) {
+    this.mouseLeaveHandlers.push(fn);
+  }
+
+  unsubscribeMouseLeave(fn) {
+    this.mouseLeaveHandlers = this.handlers.filter(
+      function (item) {
+        if (item !== fn) {
+          return item;
+        }
+      }
+    );
+  }
+
+  onMouseLeave() {
+    this.mouseLeaveHandlers.forEach((item) => {
+      if (this.mouseLeave()) {
+        item.call(this);
+      }
+    });
+  }
 };

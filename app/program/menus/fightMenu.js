@@ -8,8 +8,6 @@ class FightMenu extends Container {
     this.enemy = new Villain(ArenaRPG.player.level);
     this.enemy.init();
 
-    ArenaRPG.player;
-
     this.battleNumber = 1;
     this.totalBattles = 3;
 
@@ -63,7 +61,10 @@ class FightMenu extends Container {
 
     this.attack = function () {
       ArenaRPG.player.attack(this.container.enemy);
-      this.container.enemy.attack(ArenaRPG.player);
+
+      if (this.container.enemy.currentHP > 0) {
+        this.container.enemy.attack(ArenaRPG.player);
+      }
 
       if (this.container.enemy.currentHP <= 0) {
         this.container.battleNumber++;
