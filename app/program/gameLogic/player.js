@@ -6,8 +6,6 @@ class Player extends NPC {
   init() {
     this.availablePoints = window.program.initalPoints;
     this.fightsSurvived = 0;
-    this.level = Math.ceil(this.fightsSurvived / 3);
-
     this.weapon = LootGenerator.generateWeapon();
   }
 

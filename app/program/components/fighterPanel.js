@@ -5,6 +5,7 @@ class FighterPanel extends Container {
   }
 
   init() {
+    this.drawables.length = 0;
 
     this.color = window.program.menuBackground;
     this.width = 125;
@@ -61,14 +62,27 @@ class FighterPanel extends Container {
     this.weapon.textSize = 12;
     this.weapon.alignment = 'left';
 
+    this.weaponAttributes = new WeaponAttributes(this, this.target.weapon);
+    this.weaponAttributes.init();
+    this.weaponAttributes.visible = false;
+
+    this.weapon.subscribeMouseEnter(() => {
+      this.weaponAttributes.visible = true;
+    });
+
+    this.weapon.subscribeMouseLeave(() => {
+      this.weaponAttributes.visible = false;
+    });
+
     this.drawables.push(this.portrait);
     this.drawables.push(this.health);
     this.drawables.push(this.weapon);
     this.drawables.push(this.attributes);
+    this.drawables.push(this.weaponAttributes);
   }
 
   updateText() {
-    this.weapon.text = this.target.weapon.name;
+    this.init();
   }
 
 }

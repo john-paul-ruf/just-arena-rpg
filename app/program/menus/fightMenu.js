@@ -5,7 +5,7 @@ class FightMenu extends Container {
 
   init() {
 
-    this.enemy = new Villain(window.program.player.level);
+    this.enemy = new Villain();
     this.enemy.init();
 
     this.battleNumber = 1;
@@ -72,9 +72,6 @@ class FightMenu extends Container {
         this.container.btnTakeWeapon.visible = true;
         this.container.btnAttack.visible = false;
         this.container.updateText();
-        if (this.battleNumber === this.totalBattles) {
-          this.LevelUp = true;
-        }
       }
 
       if (window.program.player.currentHP < 0) {
@@ -172,10 +169,14 @@ class FightMenu extends Container {
   }
 
   updateGameState() {
-    this.enemy = new Villain(window.program.player.level);
+    this.enemy = new Villain();
     this.enemy.init();
     this.villainPanel.target = this.enemy;
+    this.villainPanel.init();
+
     window.program.player.currentHP = window.program.player.HP;
+    this.playerPanel.target = window.program.player;
+    this.playerPanel.init();
 
     this.villainPanel.updateText();
     this.playerPanel.updateText();

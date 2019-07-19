@@ -31,6 +31,9 @@ class Label extends Drawable{
       }
 
       text(this.text, this.relativeX, this.relativeY, this.width, this.height);
+
+      this.onMouseEnter();
+      this.onMouseLeave();
     }
   }
 }
