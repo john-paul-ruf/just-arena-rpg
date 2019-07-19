@@ -29,7 +29,7 @@ class Clickable extends Drawable {
   onClick() {
 
     this.clickHandlers.forEach((item) => {
-      if (this.clicked()) {
+      if (this.clicked() && this.visible) {
         item.call(this);
       }
     });

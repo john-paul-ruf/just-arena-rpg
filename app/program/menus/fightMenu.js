@@ -1,15 +1,6 @@
 class FightMenu extends Container {
   constructor(owner) {
     super(owner);
-  }
-
-  init() {
-
-    this.enemy = new Villain();
-    this.enemy.init();
-
-    this.battleNumber = 1;
-    this.totalBattles = 3;
 
     this.x = 50;
     this.y = -875;
@@ -22,6 +13,15 @@ class FightMenu extends Container {
     this.visible = true;
     this.dropShadow = true;
     this.showPlayerPanelMouseOver = false;
+  }
+
+  init() {
+    this.drawables.length = 0;
+
+    this.enemy = new Villain();
+    this.enemy.init();
+
+    this.battleNumber = 1;
 
     this.lblHeader = new Label(this);
     this.lblHeader.textColor = window.program.menuText;

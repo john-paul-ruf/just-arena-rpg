@@ -42,10 +42,10 @@ class CharacterBuilderMenu extends Container {
 
     this.fightTransition = function () {
       var that = this;
-      this.container.owner.fightMenu.resetBattleNumber();
-      this.container.owner.fightMenu.updateText();
+      that.container.owner.fightMenu.init();
       var inAction = function () {
         if (that.container.y < 510) {
+         
           that.container.owner.characterBuilder.y += 20;
           that.container.owner.mainMenu.y += 20;
           that.container.owner.fightMenu.y += 20;
