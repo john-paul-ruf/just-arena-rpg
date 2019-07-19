@@ -63,7 +63,7 @@ class FightMenu extends Container {
       window.program.player.attack(this.container.enemy);
 
       if (this.container.enemy.currentHP > 0) {
-        this.container.enemy.attack(ArenaRPG.player);
+        this.container.enemy.attack(window.program.player);
       }
 
       if (this.container.enemy.currentHP <= 0) {
