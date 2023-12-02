@@ -1,10 +1,11 @@
 this.arenaRPG = new ArenaRPG();
 
 let engineFont;
+/*
 function preload() {
   engineFont = loadFont('app/engine/assets/Pixel-Miners.otf');
 }
-
+*/
 
 function windowResized() {
   resizeCanvas(window.innerWidth, window.innerHeight);
