@@ -19,7 +19,7 @@ function setup() {
 }
 
 function draw() {
-  textFont(engineFont);
+  //textFont(engineFont);
   this.arenaRPG.draw();
 }
 
